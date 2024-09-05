@@ -1,5 +1,6 @@
 package jp.ac.meijou.android.s231205161;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         prefDataStore = PrefDataStore.getInstance(this);
+
 
         binding.text.setText(R.string.text);
 
@@ -70,5 +72,9 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         prefDataStore.getString("name")
                 .ifPresent(name -> binding.text.setText(name));
+        Intent intent = getIntent();
+        String text = getIntent().getStringExtra("send");
+
+        binding.text.setText(text);
     }
 }
