@@ -28,13 +28,13 @@ public class MainActivity4 extends AppCompatActivity {
                         Optional.ofNullable(result.getData())
                                 .map(data -> data.getStringExtra("ret"))
                                 .map(text -> "Result: " + text)
-                                .ifPresent(text -> binding.name.setText(text));
+                                .ifPresent(text -> binding.result.setText(text));
                         break;
                     case RESULT_CANCELED:
-                        binding.name.setText("Result: Canceled");
+                        binding.result.setText("Result: Canceled");
                         break;
                     default:
-                        binding.name.setText("Result: Unknown(" + result.getResultCode() + ")");
+                        binding.result.setText("Result: Unknown(" + result.getResultCode() + ")");
                         break;
                 }
             }
@@ -71,6 +71,11 @@ public class MainActivity4 extends AppCompatActivity {
             var intent = new Intent(this, MainActivity.class);
             intent.putExtra("send",text);
             startActivity(intent);
+        });
+
+        binding.button4.setOnClickListener(view -> {
+            var intent = new Intent(this, MainActivity3.class);
+            getActivityResult.launch(intent);
         });
 
     }

@@ -26,14 +26,18 @@
     app:layout_constraintStart_toEndOf="@+id/button1"/>
 
 <EditText
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_marginRight="130dp"
-        android:text="Name"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
+    android:id="@+id/name"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="60dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginStart="20dp"
+    android:ems="10"
+    android:text="Name"
+    app:layout_constraintEnd_toStartOf="@+id/button3"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/button1" />
+
 <Button
     android:id="@+id/button3"
     android:layout_width="wrap_content"
@@ -41,17 +45,20 @@
     android:layout_marginTop="64dp"
     android:layout_marginLeft="20dp"
     android:text="送信"
-    app:layout_constraintTop_toBottomOf="@+id/button2"
-    app:layout_constraintStart_toEndOf="@+id/name" />
+    app:layout_constraintBottom_toBottomOf="@+id/name"
+    app:layout_constraintStart_toEndOf="@+id/name"
+    app:layout_constraintEnd_toEndOf="parent"/>
 <TextView
     android:id="@+id/result"
-    android:layout_width="match_parent"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_marginTop="64dp"
-    android:layout_marginRight="130dp"
+    android:layout_marginTop="60dp"
+    android:layout_marginRight="20dp"
     android:text="Result"
     app:layout_constraintEnd_toStartOf="@+id/button4"
-    app:layout_constraintTop_toBottomOf="@+id/name" />
+    app:layout_constraintBottom_toBottomOf="@+id/button4"
+    app:layout_constraintTop_toBottomOf="@+id/name"
+    app:layout_constraintStart_toStartOf="@id/name"/>
 <Button
     android:id="@+id/button4"
     android:layout_width="wrap_content"
@@ -59,7 +66,7 @@
     android:layout_marginTop="64dp"
     android:layout_marginLeft="20dp"
     android:text="起動"
-    android:textSize="24sp"
+    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/button3"
     app:layout_constraintStart_toEndOf="@+id/result" />
 </androidx.constraintlayout.widget.ConstraintLayout>
